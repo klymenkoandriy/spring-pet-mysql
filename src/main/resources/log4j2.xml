@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    <Properties>
+        <Property name="CONSOLE_PATTERN">
+            [%-5p] %d{HH:mm:ss.SSS} %c{1.}:%L - %m%n
+        </Property>
+    </Properties>
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${CONSOLE_PATTERN}"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="software.sigma.springpet" level="debug" additivity="false">
+            <AppenderRef ref="ConsoleAppender"/>
+        </Logger>
+        <Root level="info">
+            <AppenderRef ref="ConsoleAppender" />
+        </Root>
+    </Loggers>
+</Configuration>
