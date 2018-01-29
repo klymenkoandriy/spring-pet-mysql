@@ -12,6 +12,8 @@ services:
       - MYSQL_DATABASE=petdata
       - MYSQL_USER=pet-user
       - MYSQL_PASSWORD=123
+    volumes:
+      - /storage/docker/mysql-datadir:/var/lib/mysql
 
   meterialrequest:
     build: .
